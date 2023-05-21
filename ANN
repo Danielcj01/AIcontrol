@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+
+// Activation function (sigmoid)
+double sigmoid(double x) {
+    return 1 / (1 + exp(-x));
+}
+
+// Artificial Neural Network
+double neuralNetwork(double input1, double input2) {
+    // Set the weights and biases
+    double weight1 = 0.5;
+    double weight2 = 0.5;
+    double bias = -0.7;
+
+    // Calculate the weighted sum
+    double weightedSum = (input1 * weight1) + (input2 * weight2) + bias;
+
+    // Apply the activation function
+    double output = sigmoid(weightedSum);
+
+    return output;
+}
+
+int main() {
+    // Input values
+    double input1 = 0;
+    double input2 = 1;
+
+    // Perform binary classification using the neural network
+    double classification = neuralNetwork(input1, input2);
+
+    std::cout << "Input 1: " << input1 << std::endl;
+    std::cout << "Input 2: " << input2 << std::endl;
+    std::cout << "Classification: " << classification << std::endl;
+
+    return 0;
+}
